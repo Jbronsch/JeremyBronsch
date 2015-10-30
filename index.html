@@ -8,47 +8,47 @@
     <meta name="author" content="">
     <title>Jeremy Bronsch</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700' rel='stylesheet' type='text/css'>
+    <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/featherlight.css" rel="stylesheet">
-    <link href="css/featherlight.gallery.css" rel="stylesheet">
+    <link href="css/animsition.min.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Jeremy Bronsch</a>
+    <div class="animsition">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Jeremy Bronsch</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html" class="animsition-link">Home</a></li>
+              <li ><a href="about.html" class="animsition-link">About</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+      </nav>
+      <!-- main body -->
+      <div>
+        <div>
+          <img src="img/logowhite.png" alt="" class="logo">
+        </div>
+        <div data-featherlight-gallery data-featherlight-filter="a" class="flickr-stream">
+        </div>
       </div>
-    </nav>
-    <!-- main body -->
-    <div>
-      <div data-featherlight-gallery data-featherlight-filter="a" id="flickrStream" class="container">
-        </div>
     </div>
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/masonry.min.js"></script>
-    <script src="js/jquery.lazyload.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/featherlight.min.js"></script>
-    <script src="js/featherlight.gallery.min.js"></script>
+    <script src="js/animsition.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

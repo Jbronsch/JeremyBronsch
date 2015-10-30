@@ -1,5 +1,5 @@
 //Retrieve Flickr Api information using key. Using .getJSON method instead of regular AJAX call. 
-$container = $('#flickrStream');
+$container = $('.flickr-stream');
 
 //If need to limit amount of pictures/page, append just past + User ID 
 //'&per_page=25&page='+page+
@@ -13,7 +13,7 @@ function getFlickr(page){
         $.each(data.photos.photo, function(i,item){
             var photoURL = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret +".jpg";
             var largePhoto = "http://farm" + item.farm + ".static.flickr.com/" + item.server + "/" + item.id + "_" + item.secret +"_b.jpg";
-            var imgOutput = '<div id="id' + item.id + '" class="item id' + item.id + ' grid gallery"><div class="image grid-item"><img src="' + photoURL + '" id="lightboxImage" data-featherlight="' + largePhoto + '"></div>';
+            var imgOutput = '<div class="image grid-item"><img src="' + photoURL + '" id="lightboxImage" data-featherlight="' + largePhoto + '"></div>';
             $(imgOutput).appendTo($container);
         });
     })
@@ -23,28 +23,32 @@ function getFlickr(page){
 }
 getFlickr(1);
 
-$('.grid').masonry({
-  // options...
-  itemSelector: '.grid-item',
-  columnWidth: 'grid-item',
-  percentPosition: true,
-  isFitWidth: true
-});
+$(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-out',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
 
 $(window).load(function(){
-    $("#flickrStream").fadeIn(2000);
-    $container.masonry();
-    $(".spinner").hide()
-});
-
-$(document).ready(function(){
-	$('.gallery').featherlightGallery();
-});
-
-$('a.gallery').featherlightGallery({
-    openSpeed: 300
-});
-
-$(function() {
-    $("img.lazy").lazyload();
+    $("html").fadeIn(3000);
+    $container.masonry({
+        isFitWidth: true
+    });
 });

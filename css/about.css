@@ -1,0 +1,41 @@
+body {
+	background-color: #d1d1d1;
+	color: #111;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+
+}
+
+.navbar-default {
+  	background-color: #e4e4e4;
+  	border-bottom: 1px solid #3e3e3e;
+}
+
+.about {
+	text-align: center;
+	padding-top: 40px;
+	font-weight: 300;	
+	font-size: 1.5em;
+}
+
+.jer-pic {
+	text-align: center;
+}
+
+.jeremy {
+	border: 2px solid #111;
+}
+
+.footer {
+	text-align: center;
+}
+
+.social-media {
+	padding-top: 50px;
+	margin: 10px;
+}
